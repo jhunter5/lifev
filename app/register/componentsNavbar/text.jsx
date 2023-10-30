@@ -1,7 +1,7 @@
 import React from "react";
 
 function Text(props) {
-    return <p>{props.content}</p>;
+    return <p className="font-istok antialiased text-base">{props.content}</p>;
 }
 
 export default Text;

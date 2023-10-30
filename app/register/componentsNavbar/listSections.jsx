@@ -6,10 +6,10 @@ import Section from "./section";
 
 export default function ListSection(){
     return (
-        <div className="w-2/4 flex flex-row flex-nowrap justify-around items-center">
-            <a href=""><Section icon={<AiOutlineHome/>} content="Home"/></a>
-            <a href=""><Section icon={<ImPriceTags/>} content="Prices"/></a>
-            <a href=""><Section icon={<RiHomeHeartLine/>} content="Clients"/></a>
+        <div className="w-1/4 flex flex-row flex-nowrap justify-around items-center">
+            <a href=""><Section icon={<AiOutlineHome size={20}/>} content="Home"/></a>
+            <a href=""><Section icon={<ImPriceTags size={18}/> } content="Prices"/></a>
+            <a href=""><Section icon={<RiHomeHeartLine size={20}/>} content="Clients"/></a>
         </div>
     )
 
