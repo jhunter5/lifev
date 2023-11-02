@@ -4,14 +4,14 @@ import RegisterForm from "./registerForm";
 import RegisterGoogle from "./registerGoogle";
 
 
-export default function ContainerForm(props){
+export default function ContainerForm(){
     return (
-        <div className="h-full w-1/2 p-5 flex flex-col justify-evenly">
+        <div className="w-1/2 p-5 flex flex-col justify-around ">
             <div className="flex justify-center">
                 <FancyTitle title="Register"/>
             </div>  
             <RegisterForm/>
-            <RegisterGoogle/>
+            <RegisterGoogle text="Sing Up with Google"/>
         </div>
     )
 }
