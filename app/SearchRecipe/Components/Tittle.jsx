@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Tittle(){
     return(
-        <div className="content-around bg-black shadow w-full h-24 px-10">
+        <div className="content-around bg-black shadow w-full h-full px-10">
             <div className="w-full h-[71px] bg-teal-300 rounded-[10px]">
                 <p className="w-full h-[71px] text-black text-[40px] text-center font-istok font-semibold">Life V</p>
             </div>
