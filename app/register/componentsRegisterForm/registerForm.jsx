@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { Card, CardBody, Input, Button } from "@nextui-org/react";
 
@@ -19,7 +20,7 @@ export default function RegisterForm(){
                         <Input label="Password" labelPlacement="outside" placeholder="Enter your Password" className="dark mb-5 text-white" type="password"></Input>
                     </div>
                     <div className="">
-                        <Button size="sm" className="bg-teal-300" fullWidth> Sign Up</Button>
+                        <Button size="sm" className="bg-teal-300" onClick={() => console.log('si')} fullWidth> Sign Up</Button>
                      </div>
                 </CardBody>
             </Card> 
