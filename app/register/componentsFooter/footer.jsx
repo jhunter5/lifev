@@ -9,7 +9,7 @@ export default function Footer(){
         <div className="bg-stone-950 p-5">
             <div className="flex flex-row justify-between">
                 <SocialMenu />
-                <NameBrand className="text-zinc-50" />
+                <NameBrand  />
             </div>
             <FancyHr />
             <MenuFooter />
