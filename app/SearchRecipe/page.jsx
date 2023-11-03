@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Titulo from './Components/Tittle';
 import BarraBusqueda from './Components/SearchBar';
 import Receta from './Components/Results';
+import Pagination from './Components/Pagination';
 import Navbar from "../generalComponents/componentsNavbar/navbar";
 import Footer from "../generalComponents/componentsFooter/footer";
 
@@ -35,15 +36,16 @@ const PaginaPrincipal = () => {
     <div>
       <Navbar />
       <div className="bg-black w-full h-screen flex items-center justify-center">
-        <div className="flex justify-center w-4/5 h-screen bg-stone-800 p-10 text-center mx-auto">
+        <div className="flex justify-center w-4/5 h-screen bg-neutral-800 p-10 text-center mx-auto items-center flex flex-col">
           <div className="flex flex-col">
-            <Titulo />
+            <Titulo/>
             <BarraBusqueda onSearch={handleSearchChange} />
             <div className="mt-4 flex flex-col items-center">
               {filteredRecipes.map((recipe, index) => (
                 <Receta key={index} receta={recipe} />
               ))}
             </div>
+            <Pagination />
           </div>
         </div>
       </div>

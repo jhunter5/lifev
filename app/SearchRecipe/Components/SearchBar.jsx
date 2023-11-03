@@ -12,7 +12,7 @@ const BarraBusqueda = ({ onSearch }) => {
 
   return (
     <div className="mb-4 flex justify-center">
-      <Input className="w-2/3 flat medium text-black" placeholder="Search for..." value={searchText} onChange={handleSearchChange}
+      <Input className="w-2/3 flat medium text-black caret-teal-300" placeholder="Search for..." value={searchText} onChange={handleSearchChange}
       />
     </div>
   );
