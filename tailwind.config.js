@@ -17,6 +17,7 @@ module.exports = {
       },
       fontFamily: {
         istok: ['Istok Web'],
+        jost: ['Jost'],
       },
     },
   },
