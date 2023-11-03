@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "export": "next export",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -12,12 +13,14 @@
     "@fortawesome/fontawesome-free": "^6.4.2",
     "@nextui-org/react": "^2.1.13",
     "framer-motion": "^10.16.4",
-    "next": "^14.0.0",
+    "next": "^14.0.1",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0"
   },
   "devDependencies": {
+    "@types/node": "20.8.10",
+    "@types/react": "18.2.34",
     "autoprefixer": "^10",
     "eslint": "^8",
     "eslint-config-next": "14.0.0",
