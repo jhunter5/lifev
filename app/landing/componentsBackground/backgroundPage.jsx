@@ -12,40 +12,49 @@ export default function BACKGROUND() {
           <Button
             color="default"
             className="bg-gradient-to-tr from-indigo-500 to-emerald-500 text-white shadow-lg w-10 h-10 rounded-full translate-y-3"
-          > Sign up
+          >
+            Sign up
           </Button>
         </div>
       </div>
 
       <div
-        className={`w-full h-[490px] transition-opacity duration-300 ease-soft-spring  ${
-          isHovered ? 'opacity-50' : ''
+        className={`w-full h-[490px] transition-opacity-colors duration-300 ease-soft-spring ${
+          isHovered ? 'opacity-80 text-black' : 'text-white'
         }`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <div
-            className="w-full h-full"
-            style={{
-                backgroundImage: isHovered
-                ? `url('https://images.unsplash.com/photo-1534533983688-c7b8e13fd3b6?auto=format&fit=crop&q=80&w=1770&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`
-                : `url('https://images.unsplash.com/photo-1602405385186-440222576763?auto=format&fit=crop&q=80&w=1774&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
-                backgroundPosition: 'center center',
-                backgroundSize: 'cover', }}
-                >
-        <div
-            className={`w-full h-full transition-opacity duration-300 ease-linear ${
-            isHovered ? 'opacity-50' : ''
+          className="w-full h-full"
+          style={{
+            backgroundImage: isHovered
+              ? `url('https://images.unsplash.com/photo-1555243896-c709bfa0b564?auto=format&fit=crop&q=80&w=1770&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`
+              : `url('https://images.unsplash.com/photo-1602405385186-440222576763?auto=format&fit=crop&q=80&w=1774&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+            backgroundPosition: 'center center',
+            backgroundSize: 'cover',
+          }}
+        >
+          <div
+            className={`w-full h-full ${
+              isHovered ? 'backdrop-opacity-50' : ''
             }`}
-        ></div>
+          ></div>
 
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
-            <p className="text-stone-300 text-end italic text-[110px] font-['Istok Web']">Life-V</p>
-            <p className="text-stone-300 text-end text-[55px] font-['Istok Web']">Smart Health, Happier Life</p>
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
+            <p className="text-end italic text-[110px] font-['Istok Web']">
+              Life-V
+            </p>
+            <p className="text-end text-[55px] font-['Istok Web']">
+              Smart Health, Happier Life
+            </p>
+          </div>
         </div>
-        </div>
-
       </div>
     </div>
-  )
+  );
 }
+
+
+
+

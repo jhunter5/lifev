@@ -9,7 +9,7 @@ export default function DESCRIPTION(){
 
                 <div className="flex flex-row flex-nowrap justify-center ">
                     <Button  color="default" className="bg-gradient-to-tr from-indigo-500 to-emerald-500 text-white shadow-lg
-                         w-48 h-25 rounded-full translate-y-6  italic text-[27px] font-istok-web mt-9">
+                         w-48 h-25 rounded-full translate-y-6  italic text-[27px] font-istok-web mt-12">
                         Know us
                     </Button>
                 </div>
