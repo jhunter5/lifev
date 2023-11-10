@@ -1,8 +1,40 @@
 'use client'
-import React from "react";
+import React, {useState} from "react";
 import { Card, CardBody, Input, Button } from "@nextui-org/react";
 
 export default function RegisterForm(){
+
+    const [userData, setUserData] = useState({name: '', email: '', password: ''});
+
+    const handleInputChange = (e) => {
+        setUserData({
+            ...userData,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const handleSubmit = async() => {
+        try {
+            const response = await fetch('https://back-live-v.onrender.com/register', {
+                method: 'POST',
+                body: JSON.stringify(userData),
+        })
+
+        if(response.ok){
+            // const {token} = await response.json();
+            // localStorage.setItem('token', token);
+            // router.push('/dashboard');
+            console.log('ok')
+        }else{
+            console.log('error')
+        }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    console.log(userData)
+
     return( 
         <Card 
             isBlurred
@@ -14,12 +46,12 @@ export default function RegisterForm(){
                         <p className="text-teal-300 opacity-60 text-xs">Let´s get started with your journey</p>
                 </div>
                 <div className="flex flex-col justify-evenly ">
-                    <Input label="Name" labelPlacement="outside" placeholder="Enter your Name" className="dark mb-5 text-white"></Input>
-                    <Input label="Email" labelPlacement="outside" placeholder="Enter your Email" className="dark mb-5 text-white"></Input>
-                    <Input label="Password" labelPlacement="outside" placeholder="Enter your Password" className="dark mb-5 text-white" type="password"></Input>
+                    <Input label="Name" labelPlacement="outside" placeholder="Enter your Name" className="dark mb-5 text-white" name="name" value={userData.name} onChange={handleInputChange}></Input>
+                    <Input label="Email" labelPlacement="outside" placeholder="Enter your Email" className="dark mb-5 text-white" name="email" value={userData.email} onChange={handleInputChange}></Input>
+                    <Input label="Password" labelPlacement="outside" placeholder="Enter your Password" className="dark mb-5 text-white" type="password" name="password" value={userData.password} onChange={handleInputChange}></Input>
                 </div>
                 <div className="">
-                    <Button size="sm" className="bg-teal-300" onClick={() => console.log('si')} fullWidth> Sign Up</Button>
+                    <Button size="sm" className="bg-teal-300" onClick={handleSubmit} fullWidth> Sign Up</Button>
                 </div>
             </CardBody>
         </Card> 
