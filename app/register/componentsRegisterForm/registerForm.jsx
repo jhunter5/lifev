@@ -4,7 +4,7 @@ import { Card, CardBody, Input, Button } from "@nextui-org/react";
 
 export default function RegisterForm(){
 
-    const [userData, setUserData] = useState({name: '', email: '', password: ''});
+    const [userData, setUserData] = useState({username: '', password: '' , email: ''});
 
     const handleInputChange = (e) => {
         setUserData({
@@ -18,7 +18,7 @@ export default function RegisterForm(){
             const response = await fetch('https://back-live-v.onrender.com/register', {
                 method: 'POST',
                 body: JSON.stringify(userData),
-        })
+            })
 
         if(response.ok){
             // const {token} = await response.json();
@@ -46,7 +46,7 @@ export default function RegisterForm(){
                         <p className="text-teal-300 opacity-60 text-xs">Let´s get started with your journey</p>
                 </div>
                 <div className="flex flex-col justify-evenly ">
-                    <Input label="Name" labelPlacement="outside" placeholder="Enter your Name" className="dark mb-5 text-white" name="name" value={userData.name} onChange={handleInputChange}></Input>
+                    <Input label="Name" labelPlacement="outside" placeholder="Enter your Name" className="dark mb-5 text-white" name="username" value={userData.username} onChange={handleInputChange}></Input>
                     <Input label="Email" labelPlacement="outside" placeholder="Enter your Email" className="dark mb-5 text-white" name="email" value={userData.email} onChange={handleInputChange}></Input>
                     <Input label="Password" labelPlacement="outside" placeholder="Enter your Password" className="dark mb-5 text-white" type="password" name="password" value={userData.password} onChange={handleInputChange}></Input>
                 </div>
