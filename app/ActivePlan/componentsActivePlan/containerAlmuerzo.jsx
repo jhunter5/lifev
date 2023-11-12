@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { useState } from 'react'
+import Recipe from './recipe'
 
 const ContainerAlmuerzo = () => {
     const [almuerzo, setAlmuerzo] = useState([
@@ -23,18 +24,9 @@ const ContainerAlmuerzo = () => {
     return (
         <div className="p-4 grid grid-rows w-fit h-fit bg-none border-x-2 border-teal-300/60">
             <div className=" align-top text-center w-52 h-12 text-white text-3xl font-normal font-['Istok Web']">Almuerzo</div>
-            {almuerzo.map(almuerzo => {
+            {almuerzo.map((almuerzo, index) => {
                 return (
-                    <div class="w-52 h-fit group  bg-white border-1 border-black/70">
-
-                        <div class="relative overflow ">
-                            <h1 class="text-black text-center">{almuerzo.name}</h1>
-                            <img src={almuerzo.imageUrl} alt={almuerzo.instructions} />
-                            <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                <button class="h-full w-full bg-teal-300/20 text-white py-2 px-5 rounded-r-md">cocinar!</button>
-                            </div>
-                        </div>
-                    </div>
+                    <Recipe key = {index} recipe = {almuerzo}/>
                 )
             })}
         </div>
