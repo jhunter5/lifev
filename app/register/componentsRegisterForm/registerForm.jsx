@@ -1,8 +1,10 @@
 'use client'
 import React, {useState} from "react";
 import { Card, CardBody, Input, Button } from "@nextui-org/react";
+import { useRouter } from "next/navigation";
 
 export default function RegisterForm(){
+    const router = useRouter();
 
     const [userData, setUserData] = useState({username: '', password: '' , email: ''});
 
@@ -16,31 +18,28 @@ export default function RegisterForm(){
     const handleSubmit = async() => {
         try {
             const response = await fetch('https://back-live-v.onrender.com/register', {
+                method: 'POST',
+                mode: 'cors',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                method: 'POST',
                 body: JSON.stringify(userData),
             })
 
-        if(response.ok){
-            // const {token} = await response.json();
-            // localStorage.setItem('token', token);
-            // router.push('/dashboard');
-            console.log('ok')
-            console.log(response)
-        }else{
+
+            if(response.ok){
+                // const {token} = await response.json();
+                // localStorage.setItem('token', token);
+                router.push('/login');
+            }else{
             console.log('error')
             console.log(response)
-        }
+            }
         } catch (error) {
             console.log(error)
-        }
-
-        
+        }   
     }
-
-    console.log(JSON.stringify(userData))
+    
 
     return( 
         <Card 
