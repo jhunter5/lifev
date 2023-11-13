@@ -16,6 +16,9 @@ export default function RegisterForm(){
     const handleSubmit = async() => {
         try {
             const response = await fetch('https://back-live-v.onrender.com/register', {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 method: 'POST',
                 body: JSON.stringify(userData),
             })
