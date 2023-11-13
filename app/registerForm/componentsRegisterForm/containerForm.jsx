@@ -1,7 +1,6 @@
 import React from "react";
 import FancyTitle from "./fancyTitle";
-import RegisterForm from "./registerForm";
-import RegisterGoogle from "./registerGoogle";
+import Form from "./form";
 
 
 export default function ContainerForm(){
@@ -10,8 +9,7 @@ export default function ContainerForm(){
             <div className="flex justify-center">
                 <FancyTitle title="Register"/>
             </div>  
-            <RegisterForm/>
-            <RegisterGoogle text="Sing Up with Google"/>
+            <Form/>
         </div>
     )
 }
