@@ -230,7 +230,7 @@ export default function Form() {
                 </div>
 
                 <div className="">
-                    <Button size="sm" className="bg-teal-300" onClick={() => console.log('si')} fullWidth> Sign Up</Button>
+                    <Button size="sm" className="bg-teal-300" onClick={() => console.log('si')} fullWidth>Start</Button>
                 </div>
             </CardBody>
         </Card>
