@@ -25,15 +25,19 @@ export default function RegisterForm(){
             // localStorage.setItem('token', token);
             // router.push('/dashboard');
             console.log('ok')
+            console.log(response)
         }else{
             console.log('error')
+            console.log(response)
         }
         } catch (error) {
             console.log(error)
         }
+
+        
     }
 
-    console.log(userData)
+    console.log(JSON.stringify(userData))
 
     return( 
         <Card 
