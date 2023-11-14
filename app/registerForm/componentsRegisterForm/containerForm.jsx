@@ -1,5 +1,4 @@
 import React from "react";
-import FancyTitle from "./fancyTitle";
 import Form from "./form";
 
 
