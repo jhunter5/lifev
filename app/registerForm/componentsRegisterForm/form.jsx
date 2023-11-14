@@ -5,12 +5,12 @@ import {genders, goals, diets, allergies, heighMeasurements, widthMeasurements, 
 
 export default function Form() {
     return (
+        <div className="w-full flex p-5 justify-around backdrop-filter backdrop-blur-lg bg-black/30">
         <Card
             isBlurred
-            className="border-none backdrop-filter backdrop-blur-lg  bg-black/30"
+            className="w-3/6 rounded-r-none  bg-transparent"
         >
             <CardBody >
-            
                 <div className="mb-7 ">
                     <p className="text-teal-300 font-istok ">Health Data</p>
                     <p className="text-teal-300 opacity-60 text-xs">tell us about you</p>
@@ -64,26 +64,36 @@ export default function Form() {
                     </Select>
                     </div>   
                 </div>
-
-
+                
                 <div className=" mb-7 content-center border-b-2 border-teal-300/20">
-                    <p className="text-teal-300 font-istok mb-1">Goal</p>
+                    <p className="text-teal-300 font-istok mb-1">Habits</p>
                 </div>
                 <div className="flex flex-col justify-evenly ">
+                    <Input label="Dietary habits" labelPlacement="outside" placeholder="How many meals do you eat in a day?" className="dark mb-5 text-white"></Input>
                     <Select 
                         size="md"
-                        label="Goal"
+                        label="Activity levels"
                         labelPlacement="outside"
-                        placeholder="Select your Goal"
+                        placeholder="How would you rate your level of physical activity?"
                         className="dark mb-5 text-black" 
                     >
-                        {goals.map((goal) => (
-                        <SelectItem key={goal.value} value={goal.value}>
-                            {goal.value}
+                        {activityLevels.map((activityLevel) => (
+                        <SelectItem key={activityLevel.value} value={activityLevel.value}>
+                            {activityLevel.value}
                         </SelectItem>
                         ))}
                     </Select>
                 </div>
+
+            </CardBody>
+        </Card>
+        
+        <Card
+            isBlurred
+            className="w-3/6 rounded-l-none bg-transparent"
+        >
+            <CardBody >
+                
 
                 <div className=" mb-7 content-center border-b-2 border-teal-300/20">
                     <p className="text-teal-300 font-istok mb-1">Preferences</p>
@@ -120,21 +130,22 @@ export default function Form() {
                 </div>
 
 
+                
+                
                 <div className=" mb-7 content-center border-b-2 border-teal-300/20">
-                    <p className="text-teal-300 font-istok mb-1">Habits</p>
+                    <p className="text-teal-300 font-istok mb-1">Goal</p>
                 </div>
                 <div className="flex flex-col justify-evenly ">
-                    <Input label="Dietary habits" labelPlacement="outside" placeholder="How many meals do you eat in a day?" className="dark mb-5 text-white"></Input>
                     <Select 
                         size="md"
-                        label="Activity levels"
+                        label="Goal"
                         labelPlacement="outside"
-                        placeholder="How would you rate your level of physical activity?"
+                        placeholder="Select your Goal"
                         className="dark mb-5 text-black" 
                     >
-                        {activityLevels.map((activityLevel) => (
-                        <SelectItem key={activityLevel.value} value={activityLevel.value}>
-                            {activityLevel.value}
+                        {goals.map((goal) => (
+                        <SelectItem key={goal.value} value={goal.value}>
+                            {goal.value}
                         </SelectItem>
                         ))}
                     </Select>
@@ -145,6 +156,6 @@ export default function Form() {
                 </div>
             </CardBody>
         </Card>
-        
+        </div>
     );
 }
