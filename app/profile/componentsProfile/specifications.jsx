@@ -53,7 +53,7 @@ export default function SPECIFICATIONS(){
                 <div className="w-80 h-64 bg-teal-600 rounded-[10px] mt-3 flex flex-col items-center justify-center">
                     <div className="w-56 h-60 mb-2 text-center">
                         <p className="text-black text-[16px] font-['Jost'] capitalize text-justify mt-8">
-                            It is the minimum amount of energy your body needs to maintain its vital functions. It's like the essential fuel your body uses to keep you alive, even when you're resting.
+                            It is the minimum amount of energy your body needs to maintain its vital functions. It is like the essential fuel your body uses to keep you alive, even when you are resting.
                         </p>
                     </div>
                 </div>
