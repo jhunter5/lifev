@@ -1,5 +1,7 @@
+"use client"
 import React from "react";
-import {Image} from "@nextui-org/react";
+import LinesChart from "./lineChart";
+import PieChart from "./pieChart";
 
 
 export default function PROGRESS(){
@@ -12,10 +14,26 @@ export default function PROGRESS(){
                 </p>
             </div>
 
-            <div className="w-full h-5/6 bg-zinc-900 flex flex-col items-center justify-center"> 
-                <Image  width={500} alt="LineChart" className="mt-10"
-                    src="https://media.istockphoto.com/id/1203803529/vector/stock-market-bubble-or-growth.jpg?s=612x612&w=0&k=20&c=qIuPLkH5NDzQOfuQWkwbmbP0HYKXyDwqEoYtrcGjGAs="/>
-                
+            <div className="w-full h-full bg-zinc-900 flex flex-col items-center justify-center"> 
+                    <p className="w-3/5 h-0 border border-white mt-12 "></p>
+                    <p className="text-white  italic text-[32px] font-['Istok Web'] mt-10">
+                        Streak
+                    </p>
+
+                    <div className="w-1/2 h-1/2 bg-stone-200 flex  items-center justify-center mt-4">
+                        <LinesChart/>
+                    </div>
+
+                    <p className="text-white  italic text-[32px] font-['Istok Web'] mt-10">
+                         Percentage of Monthly Meals
+                    </p>
+
+                    <div className="w-1/2 h-4/5 bg-stone-200   flex  items-center justify-center mt-4">
+                        <PieChart/>
+                    </div>
+            </div>        
+
+            <div className="w-full h-5/6 bg-zinc-900 flex flex-col items-center justify-center">  
                     <div className="w-2/5 h-32 rounded-[10px] mt-10 mb-10 bg-teal-300 flex flex-row flex-nowrap justify-center">
 
                         <div className="w-76 h-32 ml-3 text-center mt-3">

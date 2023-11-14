@@ -13,34 +13,34 @@ export default function GOAL(){
                 </div>
             </div>
 
-            <div className="w-full h-96 bg-zinc-900 flex flex-col justify-center items-center text-white">
-                <p className="text-[43px] italic font-'Istok Web' text-center mt-10">
+            <div className="w-full h-72 bg-zinc-900 flex flex-col justify-center items-center text-white">
+                <p className="text-[35px] italic font-'Istok Web' text-center mt-5">
                     Goal
                 </p>
 
-                <select className="w-72 h-12 text-[24px]  text-black mt-5">
+                <select className="w-72 h-12 text-[22px]  text-black mt-5">
                     <option>Increase muscle mass</option>
                     <option>Lose weight</option>
                     <option>Maintain weight</option>
                 </select>
 
-                <p className=" italic text-[43px] font-['Istok Web']  mt-20">
+                <p className=" italic text-[35px] font-['Istok Web']  mt-10">
                         Time to get it 
                 </p>
             </div>
 
-            <div className="w-full h-56 bg-zinc-900 flex flex-row justify-center items-center">
-                <div className="flex space-x-10 mb-16 mt-5">
-                    <div className="w-44 h-48 bg-teal-300 rounded-[10px] justify-around">
-                    <div className="w-56 h-20 -ml-7 text-center mt-7">
-                        <p className="text-black text-[32px] font-extrabold font-['Jost'] capitalize">MONTHS</p>
-                        <p className="text-black text-[74px] font-extrabold font-['Jost'] capitalize">02</p>
+            <div className="w-full h-48 bg-zinc-900 flex flex-row justify-center items-center">
+                <div className="flex space-x-10 mb-8 mt-8">
+                    <div className="w-40 h-40 bg-teal-300 rounded-[10px] justify-around">
+                    <div className="w-56 h-20 -ml-7 text-center mt-3">
+                        <p className="text-black text-[30px] font-extrabold font-['Jost'] capitalize">MONTHS</p>
+                        <p className="text-black text-[72px] font-extrabold font-['Jost'] capitalize">02</p>
                     </div>
                     </div>
-                    <div className="w-44 h-48 bg-teal-300 rounded-[10px] justify-around">
-                    <div className="w-56 h-20 text-center -ml-6 mt-7">
-                        <p className="text-black text-[32px] font-extrabold font-['Jost'] capitalize">DAYS</p>
-                        <p className="text-black text-[74px] font-extrabold font-['Jost'] capitalize">01</p>
+                    <div className="w-40 h-40 bg-teal-300 rounded-[10px] justify-around">
+                    <div className="w-56 h-20 text-center -ml-7 mt-3">
+                        <p className="text-black text-[30px] font-extrabold font-['Jost'] capitalize">DAYS</p>
+                        <p className="text-black text-[72px] font-extrabold font-['Jost'] capitalize">01</p>
                     </div>
                     </div>
                 </div>
