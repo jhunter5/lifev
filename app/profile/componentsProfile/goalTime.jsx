@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 
-export default function GOAL(){
+export default function Goal(){
     return (
         <div className=" bg-black shadow w-full h-full px-20">
             <div className="w-full h-20 bg-zinc-900 flex flex-row flex-nowrap justify-center"> 

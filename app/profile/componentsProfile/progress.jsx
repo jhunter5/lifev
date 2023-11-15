@@ -4,7 +4,7 @@ import LinesChart from "./lineChart";
 import PieChart from "./pieChart";
 
 
-export default function PROGRESS(){
+export default function Progress(){
     return (
         <div className=" bg-black shadow w-full h-5/6 px-20">
 

@@ -4,7 +4,7 @@ import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-var options = {
+let options = {
     responsive : true,
     maintainAspectRatio: false,
 
@@ -18,7 +18,7 @@ var options = {
     },
 };
 
-var data = {
+let data = {
     labels: [ 'Breakfast',"Lunch", 'Dinner'],
     datasets: [
         {

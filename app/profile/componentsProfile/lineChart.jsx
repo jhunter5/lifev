@@ -22,10 +22,10 @@ ChartJS.register(
     Filler
 );
 
-var beneficios = [0, 21, 20, 15, 2, 11, 20, 21, 25, 13, 11];
-var meses = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+let beneficios = [0, 21, 20, 15, 2, 11, 20, 21, 25, 13, 11];
+let meses = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-var midata = {
+let midata = {
     labels: meses,
     datasets: [ // Cada una de las líneas del gráfico
         {
@@ -43,7 +43,7 @@ var midata = {
     ],
 };
 
-var misoptions = {
+let misoptions = {
     scales : {
         y : {
             min : 0,

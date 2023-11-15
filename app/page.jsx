@@ -1,7 +1,20 @@
-import React from 'react';
+import React from "react";
+import BACKGROUND from "./landing/componentsBackground/backgroundPage";
+import DESCRIPTION from "./landing/componentsInformation/description";
+import SERVICES from "./landing/componentsInformation/services";
+import STATISTICS from "./landing/componentsInformation/statistics";
+import Footer from "./generalComponents/componentsFooter/footer";
 
-function HelloWorld() {
-    return <h1>Hola, mundo</h1>;
+
+export default function Page() {
+    return (
+        <div>
+            <BACKGROUND />
+            <DESCRIPTION/>
+            <SERVICES/>
+            <STATISTICS/>
+            <Footer/>
+
+        </div>  
+    )
 }
-
-export default HelloWorld;

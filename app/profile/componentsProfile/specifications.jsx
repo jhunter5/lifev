@@ -3,7 +3,7 @@ import React from "react";
 import {Button} from "@nextui-org/react";
 import { BiSolidHeartCircle } from "react-icons/bi";
 
-export default function SPECIFICATIONS(){
+export default function Specifications(){
     return (
         <div className=" bg-black shadow w-full h-full px-20">
 
