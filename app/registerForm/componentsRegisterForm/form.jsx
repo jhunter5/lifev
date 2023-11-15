@@ -36,29 +36,29 @@ export default function Form() {
                         size="md"
                         label=""
                         labelPlacement="outside"
-                        defaultSelectedKeys={["kg"]}
+                        defaultSelectedKeys={["cm"]}
                         className="dark mb-5 text-blac w-28" 
                     >
-                        {widthMeasurements.map((width) => (
-                        <SelectItem key={width.value} value={width.value}>
-                            {width.value}
+                        {heighMeasurements.map((heigh) => (
+                        <SelectItem key={heigh.value} value={heigh.value}>
+                            {heigh.value}
                         </SelectItem>
                         ))}
                     </Select>
                     </div>
 
                     <div className="flex">
-                    <Input label="Width" labelPlacement="outside" placeholder="Enter your Width" className="dark mb-5 text-white pr-2"></Input>
+                    <Input label="weight" labelPlacement="outside" placeholder="Enter your weight" className="dark mb-5 text-white pr-2"></Input>
                     <Select 
                         size="md"
                         label=" "
                         labelPlacement="outside"
-                        defaultSelectedKeys={["cm"]}
+                        defaultSelectedKeys={["kg"]}
                         className="dark mb-5 text-blac w-28" 
                     >
-                        {heighMeasurements.map((circumference) => (
-                        <SelectItem key={circumference.value} value={circumference.value}>
-                            {circumference.value}
+                        {widthMeasurements.map((weight) => (
+                        <SelectItem key={weight.value} value={weight.value}>
+                            {weight.value}
                         </SelectItem>
                         ))}
                     </Select>
@@ -105,6 +105,7 @@ export default function Form() {
                     labelPlacement="outside"
                     placeholder="Do you have any food allergies?"
                     className="dark mb-5 text-black" 
+                    defaultSelectedKeys={["None"]}
                 >
                     {allergies.map((allergy) => (
                     <SelectItem key={allergy.value} value={allergy.value}>
@@ -120,6 +121,7 @@ export default function Form() {
                     labelPlacement="outside"
                     placeholder="Do you follow any diet?"
                     className="dark mb-5 text-black" 
+                    defaultSelectedKeys={["None"]}
                 >
                     {diets.map((diet) => (
                     <SelectItem key={diet.value} value={diet.value}>
