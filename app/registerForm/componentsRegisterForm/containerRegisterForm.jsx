@@ -1,5 +1,4 @@
 import React from "react";
-import ImageAside from "./imageAside";
 import Form from "./form";
 
 export default function ContainerRegisterForm(props){
