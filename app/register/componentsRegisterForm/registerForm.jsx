@@ -30,7 +30,7 @@ export default function RegisterForm(){
             if(response.ok){
                 // const {token} = await response.json();
                 // localStorage.setItem('token', token);
-                router.push('/login');
+                router.push('/profile');
             }else{
             console.log('error')
             console.log(response)
