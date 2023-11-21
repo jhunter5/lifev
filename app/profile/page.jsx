@@ -13,7 +13,7 @@ export default function Page() {
     return (
         <div>
             <Navbar/>
-            <Background />
+            {/* <Background /> */}
             <Goal />
             <Personal />
             <Specifications />
