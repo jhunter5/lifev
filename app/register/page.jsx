@@ -1,9 +1,31 @@
-import React from "react";
+'use client'
+//import from react
+import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+//import components
 import Navbar from "../generalComponents/componentsNavbar/navbar";
 import Footer from "../generalComponents/componentsFooter/footer";
 import ContainerRegister from "./componentsRegisterForm/containerRegister";
+import LoadingScreen from "../generalComponents/loading.jsx";
+
+//import functions
+import islooged from "../islooged.js";
 
 export default function Page() {
+
+    const router = useRouter()
+    
+    useEffect(() => {
+        if (islooged()) {
+            router.push('/profile')
+        }
+    }, [router]);
+
+    if (islooged()) {
+        return <LoadingScreen/>; 
+    }
+
     return (
         <div>
             <Navbar />

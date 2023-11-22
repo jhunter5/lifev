@@ -1,22 +1,27 @@
 'use client'
+//import from react
 import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+//import components
 import Navbar from "../generalComponents/componentsNavbar/navbar.jsx";
 import Footer from "../generalComponents/componentsFooter/footer";
 import ContainerLogin from "./components/containerLogin.jsx";
-import { useRouter } from "next/navigation";
 import LoadingScreen from "../generalComponents/loading.jsx";
+
+//import functions
+import islooged from "../islooged.js";
 
 export default function Page() {
     const router = useRouter()
-    const token = localStorage.getItem('Authorization')
     
     useEffect(() => {
-        if (token) {
+        if (islooged()) {
             router.push('/profile')
         }
-    }, [token, router]);
+    }, [router]);
 
-    if (token) {
+    if (islooged()) {
         return <LoadingScreen/>; 
     }
 

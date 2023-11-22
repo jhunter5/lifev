@@ -4,10 +4,7 @@ import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from "@ne
 import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineUserDelete } from "react-icons/ai";
 
-export default function MenuDropdown() {
-
-   const token = localStorage.getItem('Authorization')
-   const disabledKeys = token ? [] : ['log out']
+export default function LoginMenuDropdown() {
 
     const handleSubmit = () => {
         localStorage.removeItem('Authorization')
@@ -26,11 +23,12 @@ export default function MenuDropdown() {
           Menu
         </Button>
       </DropdownTrigger>
-      <DropdownMenu disabledKeys={disabledKeys}>
+      <DropdownMenu >
+        <DropdownItem key="home" href="/">Home</DropdownItem>
         <DropdownItem key="profile" href="/profile">Profile</DropdownItem>
-        <DropdownItem key="copy">Copy link</DropdownItem>
-        <DropdownItem key="edit">Edit file</DropdownItem>
-        <DropdownItem key="log out" className="text-danger" color="danger" startContent={<AiOutlineUserDelete/>} onClick={handleSubmit}>
+        <DropdownItem key="activePlan" href="/ActivePlan">Active Plan</DropdownItem>
+        <DropdownItem key="searchRecipe" href="/SearchRecipe">Search Recipe</DropdownItem>
+        <DropdownItem key="logOut" className="text-danger" color="danger" startContent={<AiOutlineUserDelete/>} onClick={handleSubmit}>
           Log Out
         </DropdownItem>
       </DropdownMenu>
