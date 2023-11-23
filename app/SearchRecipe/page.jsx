@@ -1,11 +1,19 @@
+// imports react
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from "next/navigation";
+
+// imports components
 import Titulo from './Components/Tittle';
 import BarraBusqueda from './Components/SearchBar';
 import Receta from './Components/Results';
 import Pagination from './Components/Pagination';
 import Navbar from "../generalComponents/componentsNavbar/navbar";
 import Footer from "../generalComponents/componentsFooter/footer";
+import LoadingScreen from "../generalComponents/loading.jsx";
+
+// import functions
+import islooged from "../islooged.js";
 
 const recipes = [
   {
@@ -23,6 +31,7 @@ const recipes = [
 const PaginaPrincipal = () => {
   const [searchText, setSearchText] = useState('');
   const [filteredRecipes, setFilteredRecipes] = useState(recipes);
+  const [loading, setLoading] = React.useState(true);
 
   const handleSearchChange = (query) => {
     setSearchText(query);
@@ -32,7 +41,19 @@ const PaginaPrincipal = () => {
     setFilteredRecipes(filtered);
   };
 
+  const router = useRouter()
+
+  useEffect(() => {
+    if (!islooged()) {
+        router.push('/login')
+    }
+    else {
+        setLoading(false)
+    }
+  }, [router])
+
   return (
+    loading ? <LoadingScreen /> :
     <div>
       <Navbar />
       <div className="bg-black w-full h-screen flex items-center justify-center">
