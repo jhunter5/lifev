@@ -26,20 +26,21 @@ const recipes = [
   ];
 
 export default function Page() {
-
     const router = useRouter()
+    const [loading, setLoading] = React.useState(true);
 
     useEffect(() => {
       if (!islooged()) {
-          router.push('/login')
+        router.push('/login')
+      }
+      else {
+          setLoading(false)
       }
     }, [router])
 
-    if (!islooged()) {
-      return <LoadingScreen/>; 
-    }
-
+ 
     return (
+        loading ? <LoadingScreen /> : 
         <div className='h-full bg-neutral-800'>
             <Navbar />
             <div className='grid place-content-center'>

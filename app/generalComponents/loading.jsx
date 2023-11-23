@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const LoadingScreen = () => {
+export default function LoadingScreen ()  {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <div className="flex items-center justify-center h-screen">
-      <div className="animate-spin rounded-full border-t-4 border-b-4 border-gray-900 h-12 w-12"></div>
-    </div>
+    mounted && (
+      <div className="flex items-center justify-center h-screen">
+        <div className="animate-spin rounded-full border-t-4 border-b-4 border-gray-900 h-12 w-12"></div>
+      </div>
+    )
   );
 };
-
-export default LoadingScreen;
+  

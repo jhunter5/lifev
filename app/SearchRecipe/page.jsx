@@ -31,6 +31,7 @@ const recipes = [
 const PaginaPrincipal = () => {
   const [searchText, setSearchText] = useState('');
   const [filteredRecipes, setFilteredRecipes] = useState(recipes);
+  const [loading, setLoading] = React.useState(true);
 
   const handleSearchChange = (query) => {
     setSearchText(query);
@@ -46,13 +47,13 @@ const PaginaPrincipal = () => {
     if (!islooged()) {
         router.push('/login')
     }
+    else {
+        setLoading(false)
+    }
   }, [router])
 
-  if (!islooged()) {
-    return <LoadingScreen/>; 
-  }
-
   return (
+    loading ? <LoadingScreen /> :
     <div>
       <Navbar />
       <div className="bg-black w-full h-screen flex items-center justify-center">

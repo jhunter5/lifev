@@ -18,17 +18,19 @@ import islooged from "../islooged.js";
 
 export default function Page() {
     const router = useRouter()
-
+    const [loading, setLoading] = React.useState(true);
+    
     useEffect(() => {
       if (!islooged()) {
           router.push('/login')
       }
+      else {
+          setLoading(false)
+      }
     }, [router])
 
-    if (!islooged()) {
-      return <LoadingScreen/>; 
-    }
     return (
+        loading ? <LoadingScreen /> :
         <div>
             <Navbar/>
             {/* <Background /> */}

@@ -18,8 +18,8 @@ export default function NotLoginMenuDropdown() {
         </Button>
       </DropdownTrigger>
       <DropdownMenu >
-        <DropdownItem key="profile" href="/register" startContent={<AiOutlineUserAdd />} color="primary">Register</DropdownItem>
-        <DropdownItem key="profile" href="/login" startContent={<AiOutlineUserSwitch/>} color="success">Login</DropdownItem>
+        <DropdownItem key="register" href="/register" startContent={<AiOutlineUserAdd />} color="primary">Register</DropdownItem>
+        <DropdownItem key="login" href="/login" startContent={<AiOutlineUserSwitch/>} color="success">Login</DropdownItem>
       </DropdownMenu>
     </Dropdown>
   );
