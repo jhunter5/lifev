@@ -10,10 +10,10 @@ const Receta = ({ receta }) => {
             isZoomed
             src={receta.imageUrl}
             alt={receta.name}
-            className=" w-96 h-auto"/>
+            className="w-96 h-auto"/>
           <CardBody>
             <h2>{receta.name}</h2>
-            <div>{receta.instructions.split('\n').map((step, i) => (<p key={i}>{step}</p>))}</div>
+            <div>{receta.nutrition.split('\n').map((step, i) => (<p key={i}>{step}</p>))}</div>
           </CardBody>
         </div>
       </Card>

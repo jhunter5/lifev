@@ -30,9 +30,9 @@ const PaginaPrincipal = () => {
     loading ? <LoadingScreen /> : 
     <div>
       <Navbar />
-      <div className="bg-black flex items-center justify-center">
+      <div className="bg-black flex justify-center">
         <div className="w-4/5 h-screen flex items-center justify-center">
-          <div className="flex justify-center w-full h-screen p-10 text-center mx-auto items-center flex flex-col">
+          <div className="flex justify-center w-full h-screen p-[2%] text-center mx-auto items-center flex flex-col">
             <ShowRecipe />
           </div>
         </div>
