@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 // import components
-import Background from "./background";
+import BACKGROUND from "../landing/componentsBackground/backgroundPage";
 import Goal from "./componentsProfile/goalTime";
 import Personal from "./componentsProfile/personalInformation";
 import Specifications from "./componentsProfile/specifications";
@@ -33,7 +33,7 @@ export default function Page() {
         loading ? <LoadingScreen /> :
         <div>
             <Navbar/>
-            {/* <Background /> */}
+            <BACKGROUND />
             <Goal />
             <Personal />
             <Specifications />

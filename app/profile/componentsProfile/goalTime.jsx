@@ -5,9 +5,9 @@ export default function Goal(){
     return (
         <div className=" bg-black shadow w-full h-full px-20">
             <div className="w-full h-20 bg-zinc-900 flex flex-row flex-nowrap justify-center"> 
-                <div className="w-2/5 h-16 rounded-[10px] mt-10 bg-teal-300 bg-">
+                <div className="w-5/12 h-16 rounded-[10px] mt-10 bg-teal-300 bg-">
 
-                    <p className=" text-[45px] italic font-['Istok Web'] text-center text-black">
+                    <p className=" text-[40px] italic font-['Istok Web'] text-center text-black">
                         Welcome  @nickname 
                     </p>
                 </div>
