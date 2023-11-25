@@ -15,33 +15,31 @@ import LoadingScreen from "../generalComponents/loading.jsx";
 // import functions
 import islooged from "../islooged.js";
 
-const recipes = [
-  {
-    name: "Ensalada",
-    name: "Ensalada",
-    nutrition: "Calories: 200\nFat: 10g\nCarbohydrates: 25g\nProtein: 5g",
-    imageUrl: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=1770&ixlib=rb-40.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fA%3D",
-  },
-  {
-    name: "Pizza",
-    nutrition: "Calories: 1000\nFat: 50g\nCarbohydrates: 100g\nProtein: 25g",
-    imageUrl: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&q=80&w=1770&ixlib=rb-40.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D",
-  },
-];
+// const recipes = [
+// ];
 
 const PaginaPrincipal = () => {
   const [searchText, setSearchText] = useState('');
-  const [filteredRecipes, setFilteredRecipes] = useState(recipes);
+  const [filteredRecipes, setFilteredRecipes] = useState([]);
   const [loading, setLoading] = React.useState(true);
 
-  const handleSearchChange = (query) => {
+
+  const handleSearchChange = async (query) => {
     setSearchText(query);
-    const filtered = recipes.filter((recipe) =>
-      recipe.name.toLowerCase().includes(query)
-    );
-    setFilteredRecipes(filtered);
+
+    try {
+      const response = await fetch(`https://back-live-v.onrender.com/api/buscanombre?q=${query}`);
+      if (response.ok) {
+        const  recetas  = await response.json();
+        const searchedRecipes = Object.values(recetas); // Obtenemos los valores del objeto recetas
+        setFilteredRecipes(searchedRecipes);
+      }
+    } catch (error) {
+      console.error('Error fetching recipes:', error);
+    }
   };
 
+  // console.log(filteredRecipes);
   const router = useRouter()
 
   useEffect(() => {
@@ -57,17 +55,18 @@ const PaginaPrincipal = () => {
     loading ? <LoadingScreen /> :
     <div>
       <Navbar />
-      <div className="bg-black w-full h-screen flex items-center justify-center">
-        <div className="flex justify-center w-4/5 h-screen bg-neutral-800 p-10 text-center mx-auto items-center flex flex-col">
-          <div className="flex flex-col">
+      <div className="bg-black w-full h-screen flex items-center justify-center ">
+        <div className="flex justify-center w-4/5 h-screen bg-neutral-800 p-10 text-center mx-auto items-center flex-col">
+          <div className="flex flex-col w-auto overflow-x-auto">
             <Titulo/>
             <BarraBusqueda onSearch={handleSearchChange} />
-            <div className="mt-4 flex flex-col items-center">
-              {filteredRecipes.map((recipe, index) => (
+            <div className="mt-4 flex flex-col items-center ">
+              {filteredRecipes && filteredRecipes.map((recipe, index) => (
                 <Receta key={index} receta={recipe} />
+                // console.log(recipe)
               ))}
             </div>
-            <Pagination />
+            {/* <Pagination /> */}
           </div>
         </div>
       </div>
