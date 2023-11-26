@@ -9,7 +9,7 @@ export default function Progress(){
         <div className=" bg-black shadow w-full h-5/6 px-20">
 
             <div className="w-full h-20 bg-zinc-900 flex flex-col items-center justify-center "> 
-                <p className="text-white  italic text-[43px] font-['Istok Web'] mt-20">
+                <p className="text-white  italic text-4xl font-['Istok Web'] mt-20">
                     Progress
                 </p>
             </div>
@@ -34,16 +34,16 @@ export default function Progress(){
             </div>        
 
             <div className="w-full h-5/6 bg-zinc-900 flex flex-col items-center justify-center">  
-                    <div className="w-2/5 h-32 rounded-[10px] mt-10 mb-10 bg-teal-300 flex flex-row flex-nowrap justify-center">
+                    <div className="w-2/6 h-28 rounded-[10px] mt-10 mb-10 bg-teal-300 flex flex-row flex-nowrap justify-center">
 
-                        <div className="w-76 h-32 ml-3 text-center mt-3">
-                            <p className="text-black text-[28px] font-extrabold font-['Jost'] capitalize">STREAK</p>
-                            <p className="text-black text-[56px] font-extrabold font-['Jost'] capitalize">11</p>
+                        <div className="w-76 h-32 ml-3 text-center mt-5">
+                            <p className="text-black text-2xl font-extrabold font-['Jost'] capitalize">STREAK</p>
+                            <p className="text-black text-5xl font-extrabold font-['Jost'] capitalize">11</p>
                         </div>
 
-                        <div className="w-76 h-32 ml-20 text-center mt-3">
-                            <p className="text-black text-[28px] font-extrabold font-['Jost'] capitalize">OMISSION DAYS</p>
-                            <p className="text-black text-[56px] font-extrabold font-['Jost'] capitalize">03</p>
+                        <div className="w-76 h-32 ml-20 text-center mt-5">
+                            <p className="text-black text-2xl font-extrabold font-['Jost'] capitalize">OMISSION DAYS</p>
+                            <p className="text-black text-5xl font-extrabold font-['Jost'] capitalize">03</p>
                         </div>
                     
                     </div>
