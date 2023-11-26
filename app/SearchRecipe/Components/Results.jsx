@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Image, CardBody, Button } from "@nextui-org/react";
+import Link from 'next/link';
 
 const Receta = ({ receta }) => {
   return (
@@ -18,8 +19,12 @@ const Receta = ({ receta }) => {
             <p className="text-gray-600 font-istok">Fat: {receta.fat.toFixed(0)}g</p>
             <p className="text-gray-600 font-istok">Carbs: {receta.carbs.toFixed(0)}g</p>
             <p className="text-gray-600 font-istok">Protein: {receta.protein.toFixed(0)}g</p>
+            <Link href={`/recipes/${receta.id}`} className="place-self-end">
+            <Button className='transition ease-in-out delay-150 bg-teal-500 hover:-translate-y-1 hover:scale-110 hover:bg-sky-500 duration-300 w-1/4 h-8 font-istok shadow-lg shadow-black/50 mb-4 mr-4'>
+                Ir a receta</Button>
+            </Link>
           </CardBody>
-          <Button className=' place-self-end transition ease-in-out delay-150 bg-teal-500 hover:-translate-y-1 hover:scale-110 hover:bg-sky-500 duration-300 w-1/4 h-8 font-istok shadow-lg shadow-black/50 mb-4 mr-4'>View</Button>
+          {/* <Button className=' place-self-end transition ease-in-out delay-150 bg-teal-500 hover:-translate-y-1 hover:scale-110 hover:bg-sky-500 duration-300 w-1/4 h-8 font-istok shadow-lg shadow-black/50 mb-4 mr-4'>View</Button> */}
         </div>
       </Card>
     </div>

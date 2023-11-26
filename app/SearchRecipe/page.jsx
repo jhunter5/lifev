@@ -66,12 +66,7 @@ const PaginaPrincipal = () => {
               </div>
               <div className='flex justify-center'>
               {filteredRecipes.length > itemsPerPage && (
-                <Pagination 
-                  total={10}
-                  current={currentPage}
-                  pageSize={itemsPerPage}
-                  onChange={(page) => setCurrentPage(page)}
-                />
+                <Pagination total={10} current={currentPage} pageSize={itemsPerPage} onChange={(page) => setCurrentPage(page)}/>
               )}
               </div>
           </div>
