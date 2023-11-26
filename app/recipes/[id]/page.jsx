@@ -53,7 +53,7 @@ const PaginaPrincipal = ({params}) => {
       <div className="bg-black flex justify-center">
         <div className="w-4/5 h-screen flex items-center justify-center">
           <div className="flex justify-center w-full h-screen p-[2%] text-center mx-auto items-center flex-col">
-            <ShowRecipe />
+          <ShowRecipe recipeData={recipe} />
           </div>
         </div>
       </div>

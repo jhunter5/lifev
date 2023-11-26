@@ -1,15 +1,7 @@
 import React from 'react';
 import { Card } from "@nextui-org/react";
 
-const NutritionInfo = () => {
-  const nutritionInfo = {
-    calorías: 200,
-    carbohidratos: '25 gramos',
-    proteínas: '10 gramos',
-    grasas: '10 gramos',
-    fibra: '5 gramos',
-  };
-
+const NutritionInfo = ({ calories, fat, carbs, protein }) => {
   return (
     <Card className="p-2 bg-teal-500">
       <h1 className='font-bold text-lg mb-2'>INFORMACION NUTRICIONAL</h1>
@@ -22,30 +14,25 @@ const NutritionInfo = () => {
         </thead>
         <tbody>
           <tr>
-            <td className="font-bold text-left border p-2">Calorías</td>
-            <td className="font-istok text-left border p-2">{nutritionInfo.calorías}</td>
+            <td className="font-bold font-istok text-left border p-2">Calorías</td>
+            <td className="font-istok text-left border p-2">{calories.toFixed(0)}</td>
           </tr>
           <tr>
-            <td className="font-bold text-left border p-2">Carbohidratos</td>
-            <td className="font-istok text-left border p-2">{nutritionInfo.carbohidratos}</td>
+            <td className="font-bold font-istok text-left border p-2">Grasas</td>
+            <td className="font-istok text-left border p-2">{fat.toFixed(0)} g</td>
           </tr>
           <tr>
-            <td className="font-bold text-left border p-2">Proteínas</td>
-            <td className="font-istok text-left border p-2">{nutritionInfo.proteínas}</td>
+            <td className="font-bold font-istok text-left border p-2">Carbohidratos</td>
+            <td className="font-istok text-left border p-2">{carbs.toFixed(0)} g</td>
           </tr>
           <tr>
-            <td className="font-bold text-left border p-2">Grasas</td>
-            <td className="font-istok text-left border p-2">{nutritionInfo.grasas}</td>
-          </tr>
-          <tr>
-            <td className="font-bold text-left border p-2">Fibra</td>
-            <td className="font-istok text-left border p-2">{nutritionInfo.fibra}</td>
+            <td className="font-bold font-istok text-left border p-2">Proteínas</td>
+            <td className="font-istok text-left border p-2">{protein.toFixed(0)} g</td>
           </tr>
         </tbody>
       </table>
     </Card>
   );
-  
 };
 
 export default NutritionInfo;
