@@ -18,6 +18,7 @@ export default function Page() {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
+    useEffect(() => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem('Authorization');
@@ -32,6 +33,8 @@ export default function Page() {
           },
         });
 
+        console.log(token);
+        
         if (response.ok) {
           const result = await response.json();
 
@@ -64,5 +67,3 @@ export default function Page() {
     </div>
   );
 }
-
-

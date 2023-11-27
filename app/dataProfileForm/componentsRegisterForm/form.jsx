@@ -1,28 +1,37 @@
 
 import React, { useState } from "react";
-import { Card, CardBody, Input, Button, Select, SelectSection,Autocomplete,AutocompleteItem, SelectItem } from "@nextui-org/react";
+import { Card, CardBody, Input, Button, Select,Autocomplete,AutocompleteItem, SelectItem } from "@nextui-org/react";
 import { genders, goals, diets, allergies, heightMeasurements, widthMeasurements, activityLevels } from "./data";
 
 export default function Form(props) {
 
   const [userData, setUserData] = useState({
-    age: "",
-    gender: "",
-    height: "",
-    weight: "",
-    dietHabit: "",
-    activityLevel: "",
-    foodAllergies: "",
-    favoriteFood: "",
-    dislikedFood: "",
-    diets: "",
-    goal: "",
+    "age": "",
+    "gender": "",
+    "height": "",
+    "weight": "", 
+    "dietHabit": "",
+    "activityLevel": "",
+    "foodAllergies": "",
+    "favoriteFood": "",
+    "dislikedFood": "",
+    "diets": "",
+    "goal": "",
   });
 
+  const handleChange = (e, fieldName) => {
+    const value = e.target.value;
+    setUserData((prevData) => ({
+      ...prevData,
+      [fieldName]: value,
+    }));
+  };
+
+  const isNumeric = (value) => !isNaN(Number(value));
   const validateUserData = () => {
-    const isAgeValid = !isNaN(parseInt(userData.age, 10));
-    const isHeightValid = !isNaN(parseInt(userData.height, 10));
-    const isWeightValid = !isNaN(parseInt(userData.weight, 10));
+    const isAgeValid = isNumeric(userData.age);
+    const isHeightValid = isNumeric(userData.height);
+    const isWeightValid = isNumeric(userData.weight);
     const areTextFieldsValid =
       typeof userData.gender === "string" &&
       typeof userData.dietHabit === "string" &&
@@ -32,46 +41,45 @@ export default function Form(props) {
       typeof userData.diets === "string" &&
       typeof userData.goal === "string";
 
-    const areRequiredFieldsFilled =
-      userData.age !== "" &&
-      userData.gender !== "" &&
-      userData.height !== "" &&
-      userData.weight !== "" &&
-      userData.dietHabit !== "" &&
-      userData.activityLevel !== "" &&
-      userData.foodAllergies !== "" &&
-      userData.favoriteFood !== "" &&
-      userData.dislikedFood !== "" &&
-      userData.diets !== "" &&
-      userData.goal !== "";
+      console.log(isAgeValid );
+      console.log( isHeightValid);
+      console.log(isWeightValid );
+      console.log(areTextFieldsValid);
 
-    return isAgeValid && isHeightValid && isWeightValid && areTextFieldsValid && areRequiredFieldsFilled;
+    return (
+      isAgeValid && isHeightValid && isWeightValid && areTextFieldsValid 
+    );
   };
-
   const handleSubmit = async () => {
     if (!validateUserData()) {
       console.log("Error: Datos del formulario no válidos");
       return;
     }
-
     try {
+        const token = localStorage.getItem('Authorization');
+
+        if (!token) {
+          router.push("/login");
+          return;
+        }
+
+      console.log(token);
+
       const response = await fetch("https://back-live-v.onrender.com/crearperfil", {
-        method: "POST",
+        method: "PUT",
         mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
+        headers: {Authorization: token},
+
       });
 
       if (response.ok) {
         props.push("/profile");
       } else {
-        console.log("Error en la solicitud:");
+        console.log("Error en la solicitud 1:");
         console.log(response);
       }
     } catch (error) {
-      console.log("Error en la solicitud:", error);
+      console.log("Error en la solicitud 2:", error);
     }
   };
 
@@ -97,6 +105,8 @@ export default function Form(props) {
                         placeholder="Select your Gender"
                         display="block"
                         className="dark mb-5 text-black" 
+                        value={userData.age}
+                        onChange={(e) => handleChange(e, "age")}
                     >
                         {genders.map((gender) => (
                         <AutocompleteItem display="none"className="dark  "
@@ -106,13 +116,15 @@ export default function Form(props) {
                         ))}
                     </Autocomplete>
                     <div className="flex">
-                    <Input label="Heigh" labelPlacement="outside" placeholder="Enter your Heigh" className="dark mb-5 text-white pr-2"></Input>
+                    <Input label="Height" labelPlacement="outside" placeholder="Enter your Heigh" className="dark mb-5 text-white pr-2"></Input>
                     <Select 
                         size="md"
                         label=""
                         labelPlacement="outside"
                         defaultSelectedKeys={["cm"]}
-                        className="dark mb-5 text-blac w-28" 
+                        className="dark mb-5 text-white w-28" 
+                        value={userData.gender}
+                        onChange={(e) => handleChange(e, "gender")}
                     >
                         {heightMeasurements.map((height) => (
                         <SelectItem key={height.value} value={height.value}>
@@ -123,7 +135,7 @@ export default function Form(props) {
                     </div>
 
                     <div className="flex">
-                    <Input label="weight" labelPlacement="outside" placeholder="Enter your weight" className="dark mb-5 text-white pr-2"></Input>
+                    <Input label="Weight" labelPlacement="outside" placeholder="Enter your weight" className="dark mb-5 text-white pr-2"></Input>
                     <Select 
                         size="md"
                         label=" "
