@@ -10,7 +10,7 @@ import Navbar from "../generalComponents/componentsNavbar/navbar";
 import Footer from "../generalComponents/componentsFooter/footer";
 import LoadingScreen from "../generalComponents/loading.jsx";
 
-import islooged from "../islooged.js";
+import islooged from "../islogged.js";
 
 const PaginaPrincipal = () => {
   const [searchText, setSearchText] = useState('');
@@ -25,7 +25,6 @@ const PaginaPrincipal = () => {
 
   const handleSearchChange = async (query) => {
     setSearchText(query);
-  
     try {
       const response = await fetch(`https://back-live-v.onrender.com/api/buscanombre?q=${query}`);
       if (response.ok) {
