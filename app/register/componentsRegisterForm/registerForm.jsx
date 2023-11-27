@@ -41,7 +41,7 @@ export default function RegisterForm() {
       });
   
       if (response.ok) {
-        router.push("/dataProfileFomr");
+        router.push("/dataProfileForm");
       } else {
         console.log("error");
         console.log(response);

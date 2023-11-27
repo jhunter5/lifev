@@ -2,7 +2,7 @@ import React from "react";
 import NameBrand from "./nameBrand";
 import LoginMenuDropdown from "./loginDropdownMenu";
 import NotLoginMenuDropdown from "./notLoginDropdownMenu";
-import islooged from "../../islooged";
+import islooged from "../../islogged";
 
 export default function Navbar() {
     return (
