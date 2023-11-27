@@ -10,7 +10,7 @@ import ContainerRegister from "./componentsRegisterForm/containerRegister";
 import LoadingScreen from "../generalComponents/loading.jsx";
 
 //import functions
-import islooged from "../islooged.js";
+import islooged from "../islogged.js";
 
 export default function Page() {
 

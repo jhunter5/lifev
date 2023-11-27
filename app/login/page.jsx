@@ -10,7 +10,7 @@ import ContainerLogin from "./components/containerLogin.jsx";
 import LoadingScreen from "../generalComponents/loading.jsx";
 
 //import functions
-import islooged from "../islooged.js";
+import islooged from "../islogged.js";
 
 export default function Page() {
     const router = useRouter()
