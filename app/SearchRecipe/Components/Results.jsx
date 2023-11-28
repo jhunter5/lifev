@@ -4,14 +4,14 @@ import Link from 'next/link';
 
 const Receta = ({ receta }) => {
   return (
-    <div className="w-full mb-4">
+    <div className="w-full h-auto mb-4">
       <Card>
         <div className="flex bg-gray-200">
           <Image
             isZoomed
             src={receta.image.url}
             alt={"imagen"}
-            className="w-80 h-48"
+            className="w-80 h-auto"
           />
           <CardBody className="p-4">
             <h2 className="place-self-center text-xl font-bold mb-2">{receta.label}</h2>

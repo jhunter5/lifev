@@ -59,14 +59,14 @@ const PaginaPrincipal = () => {
           <div className="flex flex-col w-auto h-auto">
             <Titulo/>
             <BarraBusqueda onSearch={handleSearchChange} />
-            <div className="mt-4 flex flex-col items-center">
+            <div className="mt-4 h-auto flex flex-col items-center">
                 {currentRecipes.map((recipe, index) => (
                   <Receta key={index} receta={recipe} />
                 ))}
               </div>
               <div className='flex justify-center'>
               {filteredRecipes.length > itemsPerPage && (
-                <Pagination total={10} current={currentPage} pageSize={itemsPerPage} onChange={(page) => setCurrentPage(page)}/>
+                <Pagination total={filteredRecipes.length/2} current={currentPage} pageSize={itemsPerPage} onChange={(page) => setCurrentPage(page)}/>
               )}
               </div>
           </div>

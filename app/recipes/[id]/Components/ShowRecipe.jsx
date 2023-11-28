@@ -7,7 +7,7 @@ const ShowRecipe = ({ recipeData }) => {
   const { label, image, calories, fat, carbs, protein, ingredients } = recipeData;
 
   return (
-    <Card className="w-5/6 h-full bg-neutral-800 flex p-4">
+    <Card className="w-5/6 h-auto bg-neutral-800 flex p-4">
       <div className="flex p-4">
         <div className="w-1/2">
           <Image src={image.url} isZoomed alt={label} className="object-cover h-full rounded-md" style={{ height: '570px', marginTop: '20px' }} />
@@ -23,6 +23,9 @@ const ShowRecipe = ({ recipeData }) => {
       <div className='flex justify-between p-2'>
       <Link href="/SearchRecipe">
       <Button className='transition ease-in-out delay-150 bg-teal-500 hover:-translate-y-1 hover:scale-110 hover:bg-sky-500 duration-300 w-1/4 h-8 font-istok shadow-lg shadow-black/50'>Return</Button>
+          </Link>
+          <Link href="/ActivePlan">
+      <Button className='transition ease-in-out delay-150 bg-teal-500 hover:-translate-y-1 hover:scale-110 hover:bg-sky-500 duration-300 w-1/4 h-8 font-istok shadow-lg shadow-black/50'>ActivePlan</Button>
           </Link>
       </div>
     </Card>
