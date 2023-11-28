@@ -51,8 +51,8 @@ export default function Goal(userData){
                 <div className="flex space-x-10 mb-8 mt-3">
                     <div className="w-40 h-28 bg-teal-300 rounded-[10px] justify-around">
                     <div className="w-56 h-20 -ml-7 text-center mt-5">
-                        <p className="text-black text-2xl font-extrabold font-sans capitalize">MONTHS</p>
-                        <p className="text-black text-5xl font-extrabold font-sans capitalize">02</p>
+                        <p className="text-black text-2xl font-extrabold font-['Istok Web'] capitalize">MONTHS</p>
+                        <p className="text-black text-5xl font-extrabold font-['Istok Web'] capitalize">02</p>
                     </div>
                     </div>
                     <div className="w-40 h-28 bg-teal-300 rounded-[10px] justify-around">

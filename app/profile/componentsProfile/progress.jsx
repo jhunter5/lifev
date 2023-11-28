@@ -9,14 +9,14 @@ export default function Progress(){
         <div className=" bg-black shadow w-full h-5/6 px-20">
 
             <div className="w-full h-20 bg-zinc-900 flex flex-col items-center justify-center "> 
-                <p className="text-white  italic text-4xl font-['Istok Web'] mt-20">
+                <p className="text-white  italic text-4xl font-istok mt-20">
                     Progress
                 </p>
             </div>
 
             <div className="w-full h-full bg-zinc-900 flex flex-col items-center justify-center"> 
                     <p className="w-3/5 h-0 border border-white mt-12 "></p>
-                    <p className="text-white  italic text-[32px] font-['Istok Web'] mt-10">
+                    <p className="text-white  italic text-[32px] font-istok mt-10">
                         Streak
                     </p>
 
@@ -24,7 +24,7 @@ export default function Progress(){
                         <LinesChart/>
                     </div>
 
-                    <p className="text-white  italic text-[32px] font-['Istok Web'] mt-10">
+                    <p className="text-white  italic text-[32px] font-istok mt-10">
                          Percentage of Monthly Meals
                     </p>
 
@@ -37,13 +37,13 @@ export default function Progress(){
                     <div className="w-2/6 h-28 rounded-[10px] mt-10 mb-10 bg-teal-300 flex flex-row flex-nowrap justify-center">
 
                         <div className="w-76 h-32 ml-3 text-center mt-5">
-                            <p className="text-black text-2xl font-extrabold font-sans capitalize">STREAK</p>
-                            <p className="text-black text-5xl font-extrabold font-sans  capitalize">11</p>
+                            <p className="text-black text-2xl font-extrabold font-['Istok Web']  capitalize">STREAK</p>
+                            <p className="text-black text-5xl font-extrabold font-istok  capitalize">11</p>
                         </div>
 
                         <div className="w-76 h-32 ml-20 text-center mt-5">
-                            <p className="text-black text-2xl font-extrabold font-sans  capitalize">OMISSION DAYS</p>
-                            <p className="text-black text-5xl font-extrabold font-sans  capitalize">03</p>
+                            <p className="text-black text-2xl font-extrabold font-['Istok Web']  capitalize">OMISSION DAYS</p>
+                            <p className="text-black text-5xl font-extrabold font-istok  capitalize">03</p>
                         </div>
                     
                     </div>
