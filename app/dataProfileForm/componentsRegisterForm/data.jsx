@@ -17,7 +17,7 @@ export const diets =[
     
 ]
 
-export const allergies =[
+export const foodAllergies =[
     {value:"None"},
     {value:"Celery-free"}, {value:"Crustacean-free"}, {value:"Dairy-free"}, {value:"Egg-free"}, 
     {value:"Fish-free"}, {value:"Gluten-free"}, {value:"Lupine-free"}, {value:"Mustard-free"}, 
