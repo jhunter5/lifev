@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Card, CardBody, Input, Button } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 
-export default function RegisterForm() {
+export default function   RegisterForm() {
   const router = useRouter();
 
   const [userData, setUserData] = useState({
@@ -29,6 +29,7 @@ export default function RegisterForm() {
     }
   
     const { confirmPassword, ...userDataWithoutConfirmPassword } = userData;
+    console.log(userDataWithoutConfirmPassword)
   
     try {
       const response = await fetch("https://back-live-v.onrender.com/register", {
@@ -41,7 +42,10 @@ export default function RegisterForm() {
       });
   
       if (response.ok) {
-        router.push("/dataProfileFomr");
+        const {token} = await response.json()
+        localStorage.setItem('Authorization', token)
+        setTimeout(function() {localStorage.removeItem('Authorization')}, 1800000)
+        router.push("/dataProfileForm");
       } else {
         console.log("error");
         console.log(response);

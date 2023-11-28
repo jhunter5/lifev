@@ -10,7 +10,7 @@ import Footer from "../generalComponents/componentsFooter/footer";
 import LoadingScreen from "../generalComponents/loading.jsx";
 
 // import functions
-import islooged from "../islooged.js";
+import islooged from "../islogged.js";
 
 const recipes = [
     {
