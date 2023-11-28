@@ -9,44 +9,40 @@ import islogged from "../islogged.js";
 import obtainToken from "../obtainToken";
 
 
-async function fetchRecipe(){
-  const res = await fetch("https://back-live-v.onrender.com/api/recetas", {
-    headers: {
-      Authorization: obtainToken(), 
-    },
-  });
-  return res.json()
-}
 
 
 export default function Page() {
     const router = useRouter();
     const [loading, setLoading] = useState(true);
-    const [recipe, setRecipe] = useState(null);
+    const [recipe, setRecipe] = useState([]);
 
 
-    useEffect(() => {
-
-      async function getRecipe() {
-        try {
-          const response = await fetchRecipe()
-          setRecipe(response)
-          setLoading(false)
-        } catch (error) {
-          console.error(error)
-        }
-      }
+    const fetchData = async () => {
+        const response = await fetch("https://back-live-v.onrender.com/api/recetas", {
+          headers: {
+            Authorization: obtainToken(), 
+          },
+        });
+        if (response.ok) {
+          const result = await response.json();
+          setRecipe(result);
+          console.log(result);
+        } 
+      
+    };
   
+    useEffect(() => {
       if (!islogged()) {
-          router.push('/login')
+        router.push('/login')
       }
       else {
-        getRecipe()
+        fetchData();
+        //console.log(recipe)
+        setLoading(false)
       }
+    }, [router]);
 
-    }, [router])
-
-    //console.log(recipe)
+    
 
     return (
         <div className='h-full bg-neutral-800'>
