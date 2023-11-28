@@ -37,13 +37,13 @@ export default function Progress(){
                     <div className="w-2/6 h-28 rounded-[10px] mt-10 mb-10 bg-teal-300 flex flex-row flex-nowrap justify-center">
 
                         <div className="w-76 h-32 ml-3 text-center mt-5">
-                            <p className="text-black text-2xl font-extrabold font-jost capitalize">STREAK</p>
-                            <p className="text-black text-5xl font-extrabold font-jost  capitalize">11</p>
+                            <p className="text-black text-2xl font-extrabold font-sans capitalize">STREAK</p>
+                            <p className="text-black text-5xl font-extrabold font-sans  capitalize">11</p>
                         </div>
 
                         <div className="w-76 h-32 ml-20 text-center mt-5">
-                            <p className="text-black text-2xl font-extrabold font-jost  capitalize">OMISSION DAYS</p>
-                            <p className="text-black text-5xl font-extrabold font-jost  capitalize">03</p>
+                            <p className="text-black text-2xl font-extrabold font-sans  capitalize">OMISSION DAYS</p>
+                            <p className="text-black text-5xl font-extrabold font-sans  capitalize">03</p>
                         </div>
                     
                     </div>
