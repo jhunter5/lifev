@@ -4,8 +4,9 @@ import { Card, CardBody, Input, Button, Select,Autocomplete,AutocompleteItem, Se
 import { genders, goals, diets, foodAllergies,activityLevels } from "./data";
 import islogged from "../../islogged.js";
 import obtainToken from "../../obtainToken";
+import { useRouter } from "next/navigation";
 
-export default function Form(props) {
+export default function Form() {
 
   const [userData, setUserData] = useState({
     "age": 0,
@@ -48,6 +49,8 @@ export default function Form(props) {
     );
   };
 
+  const router = useRouter();
+
   const handleSubmit = async () => {
 
     if (!validateUserData()) {
@@ -57,7 +60,7 @@ export default function Form(props) {
     try {
         const token = localStorage.getItem('Authorization');
         if (!islogged()) {
-          router.push("/login");
+            router.push("/login");
           return;
         }
     
@@ -75,7 +78,7 @@ export default function Form(props) {
       });
 
       if (response.ok) {
-        props.push("/profile");
+        router.push("/profile");
       } else {
         console.log("Error en la solicitud 1:");
         console.log(response);
