@@ -37,7 +37,6 @@ export default function Page() {
       console.error("Error al obtener datos del perfil:", error);
     }
   };
-
   useEffect(() => {
     if (!islogged()) {
       router.push('/login')
