@@ -16,7 +16,6 @@ export default function Page() {
             <SERVICES/>
             <STATISTICS/>
             <Footer/>
-
         </div>  
     )
 }
