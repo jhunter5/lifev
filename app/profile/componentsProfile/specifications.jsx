@@ -102,20 +102,6 @@ export default function Specifications(userData){
                     </div>
                 </div>
             </div>
-
-            <div className="w-full h-28 bg-zinc-900 flex flex-row flex-nowrap justify-around"> 
-                    <div className="flex flex-row flex-nowrap justify-center ">
-                    
-                        <Button  color="default" className="bg-gradient-to-tr from-pink-700 to-rose-700 text-white shadow-lg
-                            w-72 h-18 rounded-full translate-y-6  italic text-[23px] font-istok-web mt-12">
-
-                            <a href=""><BiSolidHeartCircle size={40} color="#FFFFFF" position={"center"} /></a>
-
-
-                            Favorites Recipes
-                        </Button>
-                    </div>
-            </div>
     </div>
     )   
 }
