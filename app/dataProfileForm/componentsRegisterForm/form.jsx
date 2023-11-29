@@ -132,7 +132,7 @@ export default function Form() {
                     </Select>
                     <div className="flex">
                     <Input 
-                        label="Height" 
+                        label="Height (meters)" 
                         labelPlacement="outside" 
                         placeholder="Enter your Heigh" 
                         className="dark mb-5 text-white pr-2" 
@@ -156,7 +156,7 @@ export default function Form() {
 
                     <div className="flex">
                     <Input 
-                        label="Weight" 
+                        label="Weight (Kg)" 
                         labelPlacement="outside" 
                         placeholder="Enter your weight" 
                         className="dark mb-5 text-white pr-2" 

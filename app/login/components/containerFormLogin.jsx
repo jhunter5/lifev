@@ -11,7 +11,6 @@ export default function ContainerFormLogin(){
                 <FancyTitle title="Welcome Back!"/>
             </div> 
             <LoginForm/>
-            <RegisterGoogle text='Login In with Google'/>
         </div>
     )
 }

@@ -62,7 +62,7 @@ export default function LoginForm(){
                 </div>
                 <div>
                     <Button size="sm" className="bg-teal-300 mb-1" onClick={handleSubmit} fullWidth> Log In!</Button>
-                    <a href="http://localhost:3000/login" className="text-teal-300 opacity-60 text-xs">Forgot Password?</a>
+                    <a href="/register" className="text-teal-300 opacity-60 text-xs">Creat an account</a>
                 </div>
                 
                     
