@@ -13,7 +13,7 @@ const Recipe = ({recipe}) => {
                 <div className="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                     <Link href={'recipe/'+`${(recipe.recipe.uri).split("_")[1]}`} className="h-full w-full bg-teal-300/20  py-2 px-5 ">
                     <button className="h-full w-full bg-none text-white ">
-                    let's cook!!!
+                    lets cook!!!
                     </button>
                     </Link>
                 </div>
