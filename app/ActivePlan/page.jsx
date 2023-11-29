@@ -15,9 +15,13 @@ export default function Page() {
     const router = useRouter();
     const [loading, setLoading] = useState(true);
     const [recipe, setRecipe] = useState([]);
+    let render = false
+
 
 
     const fetchData = async () => {
+      try{
+
         const response = await fetch("https://back-live-v.onrender.com/api/recetas", {
           headers: {
             Authorization: obtainToken(), 
@@ -25,10 +29,14 @@ export default function Page() {
         });
         if (response.ok) {
           const result = await response.json();
-          setRecipe(result);
-          console.log(result);
+          if (render == false){
+            setRecipe(result);
+            render = true
+          }
         } 
-      
+      }catch (error) {
+        console.error("Error al obtener datos del perfil:", error);
+      }
     };
   
     useEffect(() => {
@@ -37,10 +45,9 @@ export default function Page() {
       }
       else {
         fetchData();
-        //console.log(recipe)
         setLoading(false)
       }
-    }, [router]);
+    }, []);
 
     
 
