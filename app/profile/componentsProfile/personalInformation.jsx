@@ -1,14 +1,14 @@
 import React from "react";
 import { Image } from "@nextui-org/react";
 
-export default function Personal() {
+export default function Personal(userData) {
   return (
     <div className="bg-black shadow w-full h-5/6 px-20">
 
       <div className="w-full h-28 bg-zinc-900 flex flex-col flex-nowrap justify-center ">
         <div className="w-full h-20 bg-zinc-900 flex flex-col items-center justify-center ">
-          <p className="text-white italic text-[43px] font-['Istok Web'] mt-20">
-            Progress
+          <p className="text-white italic text-4xl font-['Istok Web'] mt-5">
+            Personal Information
           </p>
         </div>
       </div>
@@ -25,21 +25,21 @@ export default function Personal() {
           />
         </div>
 
-        <div className="w-96 h-72 bg-teal-600 flex flex-col justify-around m rounded-md mt-10 p-5">
-          <p className="text-white text-[20px] font-bold font-['Istok Web'] capitalize mb-5">
-            Gender: male
+        <div className="w-auto h-72 bg-teal-600 flex flex-col justify-around m rounded-md mt-10 mr-8 ">
+          <p className="text-white text-[20px] font-bold font-['Istok Web'] capitalize mt-3 px-6">
+            Gender :    {userData.userData.genero}
           </p>
-          <p className="text-white text-[20px] font-bold font-['Istok Web'] capitalize mb-3">
-            Weight: 70 kg
+          <p className="text-white text-[20px] font-bold font-['Istok Web'] capitalize mb-3 px-6">
+            Weight:     {userData.userData.peso} kg
           </p>
-          <p className="text-white text-[20px] font-bold font-['Istok Web'] capitalize mb-3">
-            Height: 1,75 cm
+          <p className="text-white text-[20px] font-bold font-['Istok Web'] capitalize mb-3 px-6">
+            Height: {userData.userData.altura} m
           </p>
-          <p className="text-white text-[20px] font-bold font-['Istok Web'] capitalize mb-3">
-            Age: 60
+          <p className="text-white text-[20px] font-bold font-['Istok Web'] capitalize mb-3 px-6">
+            Age: {userData.userData.edad}
           </p>
-          <p className="text-white text-[20px] font-bold font-['Istok Web'] capitalize mb-3">
-            Activity level: Moderately active
+          <p className="text-white text-[20px] font-bold font-['Istok Web'] capitalize mb-3 px-6">
+            Activity level: {userData.userData.nivel_actividad_fisica}
           </p>
         </div>
       </div>

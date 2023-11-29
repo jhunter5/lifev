@@ -9,9 +9,8 @@ import islogged from "../islogged.js";
 import obtainToken from "../obtainToken";
 
 
-
-
 export default function Page() {
+
     const router = useRouter();
     const [loading, setLoading] = useState(true);
     const [recipe, setRecipe] = useState([]);
@@ -52,6 +51,7 @@ export default function Page() {
     
 
     return (
+        loading ? <LoadingScreen /> : 
         <div className='h-full bg-neutral-800'>
             <Navbar />
             <div className='grid place-content-center'>

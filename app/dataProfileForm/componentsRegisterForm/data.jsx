@@ -1,12 +1,11 @@
 export const genders = [
     {value: "Male"},
-    {value: "Female"},
-    {value: "Other"},]
+    {value: "Female"},]
 
 export const goals = [
-    {value: "Lose weight"},
-    {value: "Gain weight"},
-    {value: "Maintain"},]
+    {value: "Lose Weight"},
+    {value: "Increase muscle mass"},
+    {value: "Maintain Weight"},]
 
 export const diets =[
     {value:"None"},
@@ -18,7 +17,7 @@ export const diets =[
     
 ]
 
-export const allergies =[
+export const foodAllergies =[
     {value:"None"},
     {value:"Celery-free"}, {value:"Crustacean-free"}, {value:"Dairy-free"}, {value:"Egg-free"}, 
     {value:"Fish-free"}, {value:"Gluten-free"}, {value:"Lupine-free"}, {value:"Mustard-free"}, 
@@ -26,7 +25,7 @@ export const allergies =[
     {value:"Soy-free"}, {value:"Wheat-free"},
 ]
 
-export const heighMeasurements = [
+export const heightMeasurements = [
     {value:"in"}, {value:"cm"},
 ]
 
