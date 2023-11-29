@@ -47,7 +47,7 @@ export default function Page() {
         fetchData();
         setLoading(false)
       }
-    }, []);
+    }, [router]);
 
     
 
