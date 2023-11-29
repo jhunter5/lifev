@@ -5,13 +5,11 @@ import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineUserDelete } from "react-icons/ai";
 
 export default function LoginMenuDropdown() {
-
     const handleSubmit = () => {
         localStorage.removeItem('Authorization')
         window.location.reload()
     }
    
-
   return (
     <Dropdown className="bg-gray-950"> 
       <DropdownTrigger>
