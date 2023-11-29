@@ -11,7 +11,6 @@ export default function ContainerForm(){
                 <FancyTitle title="Register"/>
             </div>  
             <RegisterForm/>
-            <RegisterGoogle text="Sing Up with Google"/>
         </div>
     )
 }
